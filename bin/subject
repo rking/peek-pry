@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+require_relative '../lib/can-pry'
+def f; p 'f' end
+def g; p 'g' end
+def h; p 'h' end
+loop do
+  puts $$
+  case (rand*9).to_i
+  when 0..2 then f
+  when 3..5 then g
+  when 6..9 then h
+  end
+  sleep 0.5
+end
